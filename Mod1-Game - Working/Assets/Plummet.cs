@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//i added these lines
 public class Plummet : MonoBehaviour
 {
 
