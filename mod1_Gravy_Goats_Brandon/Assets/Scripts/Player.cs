@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float maxSpeed = 10f; //limit speed
+    public float maxSpeed = 5f; //limit speed
     public float speed = 150f; //speed of player
-    public float jumpPower = 150f; //how high player jumps 
+    public float jumpPower = 7f; //how high player jumps 
     public bool grounded; //check if player is grounded
-    
+    public Vector3 startPosition = new Vector2 (-4f, 3f);
+
     //stats
     public int curHealth;
     public int maxHealth = 5;
@@ -19,12 +20,13 @@ public class Player : MonoBehaviour
     {
         rb2d = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
+        transform.position = startPosition;
         curHealth = maxHealth;
     }
 
     void Update()
     {
-        //anim.SetBool("Grounded", grounded);
+        anim.SetBool("Grounded", grounded);
         anim.SetFloat("speed", Mathf.Abs(rb2d.velocity.x));
 
         if (Input.GetAxis("Horizontal") < -0.1f)//move left
@@ -36,10 +38,10 @@ public class Player : MonoBehaviour
             transform.localScale = new Vector3(-0.15f, 0.15f, 1);
         }
 
-        /*if (Input.GetButtonDown("Jump") && grounded)//jump only when gorunded
+        if (Input.GetButtonDown("Jump") && grounded)//jump only when gorunded
         {
-            rb2d.AddForce(Vector2.up * jumpPower);
-        }*/
+            rb2d.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+        }
 
         if (curHealth > maxHealth)
         {
@@ -63,10 +65,10 @@ public class Player : MonoBehaviour
 
         //friction for no slip after walking
         rb2d.velocity = easeVelocity;
-        /*if (grounded)
+        if (grounded)
         {
             rb2d.velocity = easeVelocity;
-        }*/
+        }
 
         //limit speed of player
         if (rb2d.velocity.x > maxSpeed)

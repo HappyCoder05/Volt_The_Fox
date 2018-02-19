@@ -7,7 +7,7 @@ public class HUD : MonoBehaviour {
     public Sprite[] HeartSprites;
     public Image HeartUI;
 
-    private Player player;
+    private Player player; //access variables in Player Script
 
     void Start()
     {

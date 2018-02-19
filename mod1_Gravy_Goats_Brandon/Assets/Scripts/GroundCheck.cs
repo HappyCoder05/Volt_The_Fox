@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GroundCheck : MonoBehaviour {
     private Player player; //access variables in Player Script
+
     void Start()
     {
         player = gameObject.GetComponentInParent<Player>();
