@@ -16,7 +16,7 @@ public class Move_Camera : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x > cam.x + 10f)
+        if (transform.position.x > cam.x + 8.5f)
         {
 
             Vector2 temp = Camera.main.transform.position;
@@ -25,7 +25,7 @@ public class Move_Camera : MonoBehaviour {
             cam = Camera.main.transform.position;
         }
         
-        else if (transform.position.x < cam.x - 10f)
+        else if (transform.position.x < cam.x - 8.5f)
         {
             Vector2 temp = Camera.main.ViewportToWorldPoint(new Vector2(0f, 0f));
             transform.position = new Vector2(temp.x + 1f, transform.position.y);
