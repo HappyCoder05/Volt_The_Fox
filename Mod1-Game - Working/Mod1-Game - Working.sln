@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mod1-Game - Working", "Assembly-CSharp.csproj", "{CC4BAAB5-6ACB-CC74-9216-A9464FDB703C}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mod1-Game - Working", "Mod1-Game - Working.csproj", "{4B54D55E-4AF2-21B0-96F4-5F9304497C8E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,15 +9,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CC4BAAB5-6ACB-CC74-9216-A9464FDB703C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CC4BAAB5-6ACB-CC74-9216-A9464FDB703C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CC4BAAB5-6ACB-CC74-9216-A9464FDB703C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CC4BAAB5-6ACB-CC74-9216-A9464FDB703C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B54D55E-4AF2-21B0-96F4-5F9304497C8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B54D55E-4AF2-21B0-96F4-5F9304497C8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B54D55E-4AF2-21B0-96F4-5F9304497C8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B54D55E-4AF2-21B0-96F4-5F9304497C8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal

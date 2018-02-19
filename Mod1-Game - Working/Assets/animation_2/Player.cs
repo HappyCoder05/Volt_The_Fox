@@ -13,11 +13,16 @@ public class Player : MonoBehaviour {
     public float movementSpeed;
 
 
+	  //stats
+    public int curHealth;
+    public int maxHealth = 5;
+	
 	// Use this for initialization
 	void Start () {
         facingRight = true;
         MyRigidBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
+		curHealth = maxHealth;
 	}
 	
 	// Update is called once per frame
@@ -39,6 +44,15 @@ public class Player : MonoBehaviour {
             Vector2 temp = Camera.main.ViewportToWorldPoint(new Vector2(0f, 0f));
             //Debug.Log(temp);
             transform.position = new Vector2(-2, 2);
+			curHealth--;
+        }
+		if (curHealth > maxHealth)
+        {
+            curHealth = maxHealth;
+        }
+        if (curHealth <= 0)
+        {
+            Die();
         }
     }
 
@@ -66,5 +80,11 @@ public class Player : MonoBehaviour {
             LineScale.x *= -1;
             transform.localScale = LineScale;
         }
+    }
+	
+    void Die()
+    {
+        //restart
+        Application.LoadLevel(Application.loadedLevel);
     }
 }

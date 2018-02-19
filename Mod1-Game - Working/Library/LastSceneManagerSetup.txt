@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/scene_start.unity
+- path: C:/Users/Sergio/Documents/mod1-game-mod1_gravy_goats/mod1_Gravy_Goats_Brandon/Assets/Scenes/testing1platform.unity
   isLoaded: 1
   isActive: 1
