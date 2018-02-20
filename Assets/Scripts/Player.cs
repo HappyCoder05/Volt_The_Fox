@@ -41,7 +41,7 @@ public class Player : MonoBehaviour {
         if(transform.position.y < 0)
         {
 
-            Vector2 temp = Camera.main.ViewportToWorldPoint(new Vector2(0f, 0f));
+            //Vector2 temp = Camera.main.ViewportToWorldPoint(new Vector2(0f, 0f));
             //Debug.Log(temp);
             transform.position = new Vector2(-2, 2);
 			curHealth--;
@@ -85,6 +85,7 @@ public class Player : MonoBehaviour {
     void Die()
     {
         //restart
-        Application.LoadLevel(Application.loadedLevel);
+        //Application.LoadLevel(Application.loadedLevel);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
     }
 }

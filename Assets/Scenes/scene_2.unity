@@ -197,10 +197,10 @@ GameObject:
   - component: {fileID: 8127275}
   - component: {fileID: 8127274}
   - component: {fileID: 8127273}
-  - component: {fileID: 8127272}
   - component: {fileID: 8127271}
-  - component: {fileID: 8127276}
   - component: {fileID: 8127270}
+  - component: {fileID: 8127272}
+  - component: {fileID: 8127276}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -335,7 +335,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 8127269}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.08, y: 3.2, z: 0}
+  m_LocalPosition: {x: 36.979, y: 3.273, z: 0}
   m_LocalScale: {x: -0.1281769, y: 0.12989272, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1218,8 +1218,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -530.95, y: 259.65}
+  m_SizeDelta: {x: 206.1, y: 49.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &217846209
 GameObject:
@@ -4712,8 +4712,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -171.79997, y: 139.90442}
-  m_SizeDelta: {x: 343.6, y: 109.4}
+  m_AnchoredPosition: {x: 0.0000019073, y: -0.0000095367}
+  m_SizeDelta: {x: 173.7, y: 74.32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1248952382
 MonoBehaviour:
