@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
         HandleMovement(horizontal);
         Flip(horizontal);
 
-        if (Input.GetKeyDown(KeyCode.Space) && grounded == true)
+        if (Input.GetKey(KeyCode.Space) && grounded == true)
         {
             MyRigidBody.AddForce(jump * jumpForce, ForceMode2D.Impulse);
             grounded = false;
@@ -41,9 +41,6 @@ public class Player : MonoBehaviour
         }
         if (transform.position.y < 0)
         {
-
-            //Vector2 temp = Camera.main.ViewportToWorldPoint(new Vector2(0f, 0f));
-            //Debug.Log(temp);
             transform.position = new Vector2(-2, 2);
             curHealth--;
         }
@@ -64,6 +61,20 @@ public class Player : MonoBehaviour
             Debug.Log("End of Level");
         grounded = true;
         //canMove = true;
+
+        //collision involving platforms
+        if (coll.transform.tag == "MovingPlatform")
+        {
+            transform.parent = coll.transform;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.transform.tag == "MovingPlatform")
+        {
+            transform.parent = null;
+        }
     }
 
     private void HandleMovement(float horizontal)

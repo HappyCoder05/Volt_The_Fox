@@ -38,7 +38,7 @@ public class trap : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other)
     {
         if (gameObject.name == "trap")
-            platform_rb.gravityScale = 0.25f;
-        //rigidbody.gravityScale = 0.1f;
+            platform_rb.gravityScale = 1f;
+        
     }
 }
