@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour
+{
     private Rigidbody2D MyRigidBody;
     private Animator myAnimator;
     private bool facingRight;
@@ -13,21 +14,21 @@ public class Player : MonoBehaviour {
     public float movementSpeed;
 
 
-	  //stats
+    //stats
     public int curHealth;
     public int maxHealth = 5;
-	
-	// Use this for initialization
-	void Start () {
+
+    void Start()
+    {
         facingRight = true;
         MyRigidBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
-		curHealth = maxHealth;
-	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
-     
+        curHealth = maxHealth;
+    }
+
+    void FixedUpdate()
+    {
+
         float horizontal = Input.GetAxis("Horizontal");
         HandleMovement(horizontal);
         Flip(horizontal);
@@ -38,15 +39,15 @@ public class Player : MonoBehaviour {
             grounded = false;
 
         }
-        if(transform.position.y < 0)
+        if (transform.position.y < 0)
         {
 
             //Vector2 temp = Camera.main.ViewportToWorldPoint(new Vector2(0f, 0f));
             //Debug.Log(temp);
             transform.position = new Vector2(-2, 2);
-			curHealth--;
+            curHealth--;
         }
-		if (curHealth > maxHealth)
+        if (curHealth > maxHealth)
         {
             curHealth = maxHealth;
         }
@@ -81,7 +82,7 @@ public class Player : MonoBehaviour {
             transform.localScale = LineScale;
         }
     }
-	
+
     void Die()
     {
         //restart
