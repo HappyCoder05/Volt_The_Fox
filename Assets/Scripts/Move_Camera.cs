@@ -7,8 +7,6 @@ public class Move_Camera : MonoBehaviour
     Vector2 cam;
     void Start()
     {
-        //Debug.Log(Camera.main.ScreenToWorldPoint(new Vector2(Camera.main.pixelWidth/2, Camera.main.pixelHeight/2)));
-        //cam = Camera.main.ScreenToWorldPoint(new Vector2(Camera.main.pixelWidth, Camera.main.pixelHeight));
         cam = Camera.main.transform.position;
     }
 
@@ -19,7 +17,6 @@ public class Move_Camera : MonoBehaviour
 
             Vector2 temp = Camera.main.transform.position;
             Camera.main.transform.position = new Vector3(temp.x + 18f, temp.y, -10);
-            //cam = Camera.main.ScreenToWorldPoint(new Vector2(Camera.main.pixelWidth, Camera.main.pixelHeight));
             cam = Camera.main.transform.position;
         }
 

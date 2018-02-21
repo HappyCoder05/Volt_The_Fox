@@ -7,11 +7,13 @@ public class Player : MonoBehaviour
     private Rigidbody2D MyRigidBody;
     private Animator myAnimator;
     private bool facingRight;
-    bool grounded = true;
+
     public float jumpForce = 15f;
     public Vector2 jump = new Vector2(0.0f, 10.0f);
-    //[SerializeField]
     public float movementSpeed;
+    public Vector3 respawnPoint;
+
+    bool grounded = true;
 
 
     //stats
@@ -20,6 +22,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        respawnPoint = transform.position;
         facingRight = true;
         MyRigidBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
@@ -41,7 +44,7 @@ public class Player : MonoBehaviour
         }
         if (transform.position.y < 0)
         {
-            transform.position = new Vector2(-2, 2);
+            transform.position = respawnPoint;
             curHealth--;
         }
         if (curHealth > maxHealth)
@@ -56,7 +59,6 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        // Debug.Log("Collision with: "+  coll.gameObject.name);
         if (coll.gameObject.name == "end")
             Debug.Log("End of Level");
         grounded = true;
@@ -96,8 +98,6 @@ public class Player : MonoBehaviour
 
     void Die()
     {
-        //restart
-        //Application.LoadLevel(Application.loadedLevel);
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
     }
 }
