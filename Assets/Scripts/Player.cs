@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public Vector3 respawnPoint;
 
     bool grounded = true;
+    public bool dead = false;
 
 
     //stats
@@ -42,10 +43,11 @@ public class Player : MonoBehaviour
             grounded = false;
 
         }
-        if (transform.position.y < 0)
+        if (transform.position.y < 0 || dead == true)
         {
             transform.position = respawnPoint;
             curHealth--;
+            dead = false;
         }
         if (curHealth > maxHealth)
         {
