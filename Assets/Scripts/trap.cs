@@ -17,10 +17,10 @@ public class trap : MonoBehaviour
 
     void Update()
     {
-        if (transform.position.y < 0 && gameObject.name == "trap")
+        if (transform.position.y < 0 && platform_rb.tag == "plummet_trap")
         {
             platform_rb.gravityScale = 0.0f;
-            transform.position = starting_pos;
+            transform.position = new Vector2(starting_pos.x, starting_pos.y + 1);
         }
         if (gameObject.name == "moving_platform")
         {
@@ -37,7 +37,7 @@ public class trap : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (gameObject.name == "trap")
+        if (platform_rb.tag == "plummet_trap")
             platform_rb.gravityScale = 1f;
         
     }
