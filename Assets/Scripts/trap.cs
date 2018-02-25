@@ -17,12 +17,13 @@ public class trap : MonoBehaviour
 
     void Update()
     {
-        if (transform.position.y < 0 && platform_rb.tag == "plummet_trap")
+        if (transform.position.y < 0 && (platform_rb.tag == "plummet_trap" || platform_rb.tag == "plummet_trap_delayed"))
         {
+            platform_rb.bodyType = RigidbodyType2D.Static;
             platform_rb.gravityScale = 0.0f;
-            transform.position = new Vector2(starting_pos.x, starting_pos.y + 1);
+            transform.position = starting_pos;
         }
-        if (gameObject.name == "moving_platform")
+        if (gameObject.tag == "moving_platform_vertical")
         {
             if (transform.position.y < 2.0f)
             {
@@ -37,8 +38,17 @@ public class trap : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (platform_rb.tag == "plummet_trap")
-            platform_rb.gravityScale = 1f;
-        
+        if (gameObject.tag == "plummet_trap_delayed")
+            Invoke("change_gravity", 1);
+        if (gameObject.tag == "plummet_trap")
+           platform_rb.gravityScale = 1f;
+
+    }
+
+    void change_gravity()
+    {
+        //Rigidbody2D platform = Instantiate(platform_rb);
+        platform_rb.bodyType = RigidbodyType2D.Dynamic;
+        platform_rb.gravityScale = 1f;
     }
 }

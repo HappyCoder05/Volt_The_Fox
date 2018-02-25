@@ -8,6 +8,7 @@ TagManager:
   - MovingPlatform
   - Checkpoint
   - plummet_trap
+  - plummet_trap_delayed
   layers:
   - Default
   - TransparentFX

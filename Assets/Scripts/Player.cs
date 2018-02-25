@@ -8,8 +8,8 @@ public class Player : MonoBehaviour
     private Animator myAnimator;
     private bool facingRight;
 
-    public float jumpForce = 15f;
-    public Vector2 jump = new Vector2(0.0f, 10.0f);
+    public float jumpForce = 10f;
+    public Vector2 jump = new Vector2(0.0f, 15.0f);
     public float movementSpeed;
     public Vector3 respawnPoint;
 
