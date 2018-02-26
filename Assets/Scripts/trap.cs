@@ -39,7 +39,7 @@ public class trap : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other)
     {
         if (gameObject.tag == "plummet_trap_delayed")
-            Invoke("change_gravity", 1);
+            Invoke("change_gravity", 0.5f);
         else if (gameObject.tag == "plummet_trap")
             change_gravity();
     }

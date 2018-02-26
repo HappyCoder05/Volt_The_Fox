@@ -2,28 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tree_Trap : MonoBehaviour {
+public class spikes : MonoBehaviour {
 
     Rigidbody2D rb;
     private Player player;
     private SpriteRenderer tree_traps;
     Vector2 start_position;
-	
-	void Start () {
+
+    void Start()
+    {
         tree_traps = GetComponent<SpriteRenderer>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        tree_traps.enabled = false;
+        tree_traps.enabled = true;
         rb = GetComponent<Rigidbody2D>();
         start_position = rb.position;
-	}
+    }
 
-    void OnTriggerEnter2D (Collider2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.name.Equals("Player"))
         {
             tree_traps.enabled = true;
             rb.isKinematic = false;
-            rb.gravityScale = 2f;
+            rb.gravityScale = 1.5f;
         }
     }
 
@@ -40,16 +41,16 @@ public class Tree_Trap : MonoBehaviour {
             gameObject.transform.position = start_position;
             rb.isKinematic = true;
         }
-        tree_traps.enabled = false;
+
+
     }
     // Update is called once per frame
-    void Update ()
+    void Update()
     {
-	    if(gameObject.transform.position.y < 0)
-        {
-            gameObject.transform.position = start_position;
-            rb.isKinematic = true;
-            tree_traps.enabled = false;
-        }
-	}
+        //if(gameObject.transform.position.y > 10f)
+        //{
+        //    gameObject.transform.position = start_position;
+        //    rb.isKinematic = true;
+        //}
+    }
 }
