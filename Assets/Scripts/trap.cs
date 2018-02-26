@@ -40,9 +40,8 @@ public class trap : MonoBehaviour
     {
         if (gameObject.tag == "plummet_trap_delayed")
             Invoke("change_gravity", 1);
-        if (gameObject.tag == "plummet_trap")
-           platform_rb.gravityScale = 1f;
-
+        else if (gameObject.tag == "plummet_trap")
+            change_gravity();
     }
 
     void change_gravity()
