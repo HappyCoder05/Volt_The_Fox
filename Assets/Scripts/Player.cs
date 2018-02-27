@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
         }
         if (curHealth <= 0)
         {
-            Die();
+            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
         }
     }
 
@@ -96,10 +96,5 @@ public class Player : MonoBehaviour
             LineScale.x *= -1;
             transform.localScale = LineScale;
         }
-    }
-
-    void Die()
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
     }
 }
