@@ -6,28 +6,25 @@ using UnityEngine.UI;
 public class GameOverScript : MonoBehaviour {
     public Text txtGameOver;
     public RectTransform panelGameOver;
+    public Button resButton;
     public Sprite rocket;
+    public float finalTime;
 
     private Player player;
+    private Timer t;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-    }
-
-    IEnumerator Restart()
-    {
-        yield return new WaitForSeconds(5);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+        t = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
     }
 
     void FixedUpdate()
     {
         if (player.curHealth <= 0)
         {
-            StartCoroutine(Restart());
             Dead();
-            Restart();
+            resButton.gameObject.SetActive(true);
         }
     }
 
@@ -35,10 +32,15 @@ public class GameOverScript : MonoBehaviour {
     {
         if (collision.tag == "Player")
         {
-            StartCoroutine(Restart());
             Win();
-            Restart();
+            finalTime = 999f - t.timer;
+            resButton.gameObject.SetActive(true);
         }
+    }
+
+    public void Restart()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
     }
 
     public void Dead()

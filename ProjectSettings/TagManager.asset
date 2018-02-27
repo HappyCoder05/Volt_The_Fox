@@ -9,6 +9,7 @@ TagManager:
   - Checkpoint
   - plummet_trap
   - plummet_trap_delayed
+  - Timer
   layers:
   - Default
   - TransparentFX
