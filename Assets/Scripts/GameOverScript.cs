@@ -18,7 +18,7 @@ public class GameOverScript : MonoBehaviour {
 
     void FixedUpdate()
     {
-        if (player.curHealth <= 0)
+        if (player.curHealth == 0)
         {
             Dead();
             resButton.gameObject.SetActive(true);
