@@ -8,15 +8,12 @@ public class GameOverScript : MonoBehaviour {
     public RectTransform panelGameOver;
     public Button resButton;
     public Sprite rocket;
-    public float finalTime;
 
     private Player player;
-    private Timer t;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        t = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
     }
 
     void FixedUpdate()
@@ -33,7 +30,6 @@ public class GameOverScript : MonoBehaviour {
         if (collision.tag == "Player")
         {
             Win();
-            finalTime = 999f - t.timer;
             resButton.gameObject.SetActive(true);
         }
     }

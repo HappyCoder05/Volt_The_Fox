@@ -14,6 +14,5 @@ public class Timer : MonoBehaviour {
 	void Update () {
         timer -= Time.deltaTime;
         timerText.text = timer.ToString("f2"); //round timer to 2 decimal spaces
-        print(timer);
 	}
 }
