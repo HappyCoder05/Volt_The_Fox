@@ -18,11 +18,6 @@ public class CheckpointControl : MonoBehaviour
         checkpointSR = GetComponent<SpriteRenderer>();
     }
 
-    void Update()
-    {
-
-    }
-
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag == "Player")

@@ -45,17 +45,20 @@ public class Player : MonoBehaviour
         }
         if (transform.position.y < 0 || dead == true)
         {
-            transform.position = respawnPoint;
             curHealth--;
-            dead = false;
+            if (curHealth > 0)
+            {
+                transform.position = respawnPoint;
+                dead = false;
+            }
+            else
+            {
+                dead = true;
+            }
         }
         if (curHealth > maxHealth)
         {
             curHealth = maxHealth;
-        }
-        if (curHealth <= 0)
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
         }
     }
 
@@ -64,7 +67,6 @@ public class Player : MonoBehaviour
         if (coll.gameObject.name == "end")
             Debug.Log("End of Level");
         grounded = true;
-        //canMove = true;
 
         //collision involving platforms
         if (coll.transform.tag == "MovingPlatform")
